@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Kamal & Spring Boot example</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+    <h1>Kamal & Spring Boot example</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Animal Type</th>
+            <th>Favorite Food</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pet : ${pets}">
+            <td th:text="${pet.id}">1</td>
+            <td th:text="${pet.name}">Name</td>
+            <td th:text="${pet.animalType}">Type</td>
+            <td th:text="${pet.favoriteFood}">Food</td>
+            <td th:text="${pet.age}">Age</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+
+</body>
+</html>

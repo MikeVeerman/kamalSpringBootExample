@@ -1,3 +1,4 @@
+#file: noinspection YAMLSchemaValidation
 service: kamal-spring-boot-example
 
 image: mikeveerman/kamalspringbootexample
@@ -14,11 +15,11 @@ servers:
     hosts:
       - 195.201.5.42
     labels:
-      traefik.http.routers.nonectgpt.rule: Host(kamal`)
-      traefik.http.routers.nonectgpt_secure.entrypoints: websecure
-      traefik.http.routers.nonectgpt_secure.rule: Host(`kamalspringboot.nonect.com`)
-      traefik.http.routers.nonectgpt_secure.tls: true
-      traefik.http.routers.nonectgpt_secure.tls.certresolver: letsencrypt
+      traefik.http.routers.nonectkamalexample.rule: Host(`kamalspringboot.nonect.com`)
+      traefik.http.routers.nonectkamalexample_secure.entrypoints: websecure
+      traefik.http.routers.nonectkamalexample_secure.rule: Host(`kamalspringboot.nonect.com`)
+      traefik.http.routers.nonectkamalexample_secure.tls: true
+      traefik.http.routers.nonectkamalexample_secure.tls.certresolver: letsencrypt
 
 registry:
   server: ghcr.io
@@ -60,4 +61,4 @@ healthcheck:
    path: /actuator/health
    port: 8080
    max_attempts: 20
-   interval: 30s
+   interval: 10s
